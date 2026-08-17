@@ -1,0 +1,35 @@
+﻿<Window x:Class="omni_multitool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:omni_multitool"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <StackPanel Grid.Column="0">
+            <Button Name="BtnFavorites"
+                Content="Favorites"
+                Click="BtnFavorites_Click"/>
+
+            <Button Name="BtnUtilities"
+                Content="Utilities"
+                Click="BtnUtilities_Click"/>
+
+            <Button Name="BtnSettings"
+                Content="Settings"
+                Click="BtnSettings_Click"/>
+        </StackPanel>
+
+        <!-- Content Area -->
+        <Frame x:Name="MainFrame"
+           Grid.Column="1"
+           NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
