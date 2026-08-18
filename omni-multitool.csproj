@@ -9,4 +9,43 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Assets\Fonts\Jost-Bold.ttf" />
+    <None Remove="Assets\Fonts\Jost-Medium.ttf" />
+    <None Remove="Assets\Fonts\Jost-Regular.ttf" />
+    <None Remove="Assets\Fonts\Kodchasan-Bold.ttf" />
+    <None Remove="Assets\Fonts\Kodchasan-Medium.ttf" />
+    <None Remove="Assets\Fonts\Kodchasan-Regular.ttf" />
+    <None Remove="Assets\Fonts\MaterialSymbolsOutlined_28pt-Bold.ttf" />
+    <None Remove="Assets\Fonts\MaterialSymbolsOutlined_28pt-Medium.ttf" />
+    <None Remove="Assets\Fonts\MaterialSymbolsOutlined_28pt-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Fonts\Jost-Bold.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Fonts\Jost-Medium.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Fonts\Jost-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Fonts\Kodchasan-Medium.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Fonts\Kodchasan-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Fonts\MaterialSymbolsOutlined_28pt-Bold.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Fonts\MaterialSymbolsOutlined_28pt-Medium.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Fonts\MaterialSymbolsOutlined_28pt-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

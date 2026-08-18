@@ -4,6 +4,98 @@
              xmlns:local="clr-namespace:omni_multitool"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <!--Fonts-->
+        <FontFamily x:Key="Jost">
+            /Assets/Fonts/Jost-Regular.ttf#Jost
+        </FontFamily>
+
+        <FontFamily x:Key="Kodchasan">
+            /Assets/Fonts/#Kodchasan
+        </FontFamily>
+        
+        <FontFamily x:Key="MaterialSymbolsOutlined">
+            /Assets/Fonts/MaterialSymbolsOutlined_28pt-Regular.ttf#Material Symbols Outlined 28pt
+        </FontFamily>
+        <!--Buttons-->
+
+        <Style x:Key="SidebarButtonStyle"
+       TargetType="Button">
+
+            <Setter Property="Background"
+            Value="Transparent"/>
+
+            <Setter Property="Foreground"
+            Value="#c8c8c8"/>
+
+            <Setter Property="BorderThickness"
+            Value="0"/>
+
+            <Setter Property="FontSize"
+            Value="16"/>    
+
+            <Setter Property="FontWeight"
+            Value="Regular"/>
+
+            <Setter Property="FontFamily"
+            Value="{StaticResource Jost}"/>
+
+            <Setter Property="HorizontalContentAlignment"
+            Value="Left"/>
+
+            <Setter Property="Padding"
+            Value="16,12"/>
+
+            <Setter Property="Margin"
+            Value="0,4"/>
+
+            <Setter Property="Cursor"
+            Value="Hand"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="Button">
+
+                        <Border x:Name="ButtonBorder"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="10"
+                        Padding="{TemplateBinding Padding}">
+
+                            <ContentPresenter
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="Center"/>
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <!-- Hover -->
+                            <Trigger Property="IsMouseOver"
+                             Value="True">
+
+                                <Setter Property="Foreground"
+                                Value="#C94FF8"/>
+
+                            </Trigger>
+
+                            <!-- Selected / Active state (optional later) -->
+                            <!--<Trigger Property="IsPressed"
+                             Value="True">
+
+                        <Setter TargetName="ButtonBorder"
+                                Property="Background"
+                                Value="#431C52"/>
+
+                    </Trigger>-->
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+
+        </Style>
     </Application.Resources>
 </Application>

@@ -12,6 +12,8 @@
         <TextBlock Text="Settings"
                    FontSize="32"
                    HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
+                   VerticalAlignment="Center"
+                   Foreground="#fefefe"/>
+
     </Grid>
 </Page>
