@@ -12,7 +12,7 @@
         Width="1000"
         Height="600"
         Background="#1B1D2E"
-        >
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="145"/>

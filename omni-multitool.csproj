@@ -20,6 +20,7 @@
     <None Remove="Assets\Fonts\MaterialSymbolsOutlined_28pt-Bold.ttf" />
     <None Remove="Assets\Fonts\MaterialSymbolsOutlined_28pt-Medium.ttf" />
     <None Remove="Assets\Fonts\MaterialSymbolsOutlined_28pt-Regular.ttf" />
+    <None Remove="Assets\Images\GlassCube.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,6 +49,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Fonts\MaterialSymbolsOutlined_28pt-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\GlassCube.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:omni_multitool"
              xmlns:helpers="clr-namespace:omni_multitool.Helpers"
-             StartupUri="MainWindow.xaml">
+             StartupUri="/Pages/WelcomePage.xaml">
     <Application.Resources>
 
         <!--Motion Animations-->
@@ -72,7 +72,16 @@
         <!--
         ===========Buttons============
         -->
-        
+        <!--Checkbox-->
+        <!--<Style x:Key="CheckboxStyle"
+               TargetType="CheckBox">
+
+            <Setter Property="Cursor"
+            Value="Hand"/>
+
+            <Setter Property="CornerRadius"
+                    Value="2"/>
+        </Style>-->
         
         <!--Toggle-->
         <Style x:Key="ToggleStyle"
@@ -282,6 +291,93 @@
                     </ControlTemplate>
 
                 </Setter.Value>
+            </Setter>
+
+        </Style>
+
+        <!--welcome button-->
+        <Style x:Key="WelcomeButtonStyle"
+       TargetType="Button">
+
+            <Setter Property="Background"
+            Value="#c8c8c8"/>
+
+            <Setter Property="Foreground"
+            Value="#1b1b1b"/>
+
+            <Setter Property="BorderThickness"
+            Value="0"/>
+
+            <Setter Property="FontFamily"
+            Value="{StaticResource Jost}"/>
+
+            <Setter Property="FontSize"
+            Value="14"/>
+
+            <Setter Property="Cursor"
+            Value="Hand"/>
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="Button">
+
+                        <ControlTemplate.Resources>
+
+                            <DropShadowEffect x:Key="WelcomeButtonGlow"
+                          Color="#A611ED"
+                          BlurRadius="15"
+                          ShadowDepth="0"
+                          Opacity="0.7"/>
+
+                        </ControlTemplate.Resources>
+
+                        <Border x:Name="ButtonBorder"
+            Background="{TemplateBinding Background}"
+            CornerRadius="10">
+
+                            <ContentPresenter
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <!-- Hover -->
+                            <Trigger Property="IsMouseOver"
+                 Value="True">
+
+                                <Setter TargetName="ButtonBorder"
+                    Property="Background"
+                    Value="#C94FF8"/>
+
+                                <Setter TargetName="ButtonBorder"
+                    Property="Effect"
+                    Value="{StaticResource WelcomeButtonGlow}"/>
+
+                            </Trigger>
+
+                            <!-- Pressed -->
+                            <Trigger Property="IsPressed"
+                 Value="True">
+
+                                <Setter TargetName="ButtonBorder"
+                    Property="Background"
+                    Value="#431C52"/>
+
+                                <Setter TargetName="ButtonBorder"
+                    Property="Effect"
+                    Value="{StaticResource WelcomeButtonGlow}"/>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+
             </Setter>
 
         </Style>
