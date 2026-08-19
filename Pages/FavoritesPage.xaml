@@ -9,10 +9,43 @@
       Title="FavoritesPage">
 
     <Grid>
-        <TextBlock Text="Favorites"
-                   FontSize="32"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   Foreground="#fefefe"/>
+
+        <StackPanel Margin="30">
+
+            <!--Favorites Section-->
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0"
+                    Style="{StaticResource IconStyle}">
+
+                    <TextBlock
+                FontFamily="{StaticResource MaterialSymbolsOutlined}"
+                Text="&#xE87D;"
+                FontSize="22"
+                FontWeight="Thin"
+                Foreground="#FEFEFE"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"/>
+
+                </Border>
+
+                <TextBlock Grid.Column="1"
+               Text="Favorites"
+               Style="{StaticResource SettingsSectionHeader}"
+               Margin="20,0,0,0"
+               VerticalAlignment="Center"/>
+            </Grid>
+
+            <Border Height="1"
+                Background="#444444"
+                Margin="0,20,0,20"/>
+
+        </StackPanel>
+
     </Grid>
 </Page>

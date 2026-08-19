@@ -8,11 +8,41 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="UtilitiesPage">
 
-    <Grid>
-        <TextBlock Text="Utilities"
-                   FontSize="32"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   Foreground="#fefefe"/>
-    </Grid>
+    <StackPanel Margin="30">
+
+        <!--Utilities Section-->
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0"
+                    Style="{StaticResource IconStyle}">
+
+                <TextBlock
+                FontFamily="{StaticResource MaterialSymbolsOutlined}"
+                Text="&#xE869;"
+                FontSize="22"
+                FontWeight="Thin"
+                Foreground="#FEFEFE"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"/>
+
+            </Border>
+
+            <TextBlock Grid.Column="1"
+               Text="Utilities"
+               Style="{StaticResource SettingsSectionHeader}"
+               Margin="20,0,0,0"
+               VerticalAlignment="Center"/>
+        </Grid>
+
+        <Border Height="1"
+                Background="#444444"
+                Margin="0,20,0,20"/>
+
+    </StackPanel>
+
 </Page>

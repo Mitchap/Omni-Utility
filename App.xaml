@@ -2,10 +2,56 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:omni_multitool"
+             xmlns:helpers="clr-namespace:omni_multitool.Helpers"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
-        <!--Fonts-->
+        <!--Motion Animations-->
+        <Duration x:Key="MotionFast">0:0:0.15</Duration>
+        <Duration x:Key="MotionNormal">0:0:0.18</Duration>
+        <Duration x:Key="MotionPage">0:0:0.30</Duration>
+        
+        <!--
+        =============Cards==============
+        -->
+        <Style x:Key="IconStyle"
+       TargetType="Border">
+
+            <Setter Property="Width"
+            Value="36"/>
+
+            <Setter Property="Height"
+            Value="36"/>
+
+            <Setter Property="CornerRadius"
+            Value="10"/>
+
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush
+                StartPoint="0,0.5"
+                EndPoint="1,0.5">
+
+                        <GradientStop Color="#A611ED"
+                              Offset="0"/>
+
+                        <GradientStop Color="#431C52"
+                              Offset="1"/>
+
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+        <!--
+        ============Fonts==============
+        -->
+
+        <FontFamily x:Key="MaterialDesignIcons">
+            /Assets/Fonts/materialdesignicons-webfont.ttf#Material Design Icons
+        </FontFamily>
+
         <FontFamily x:Key="Jost">
             /Assets/Fonts/Jost-Regular.ttf#Jost
         </FontFamily>
@@ -17,8 +63,112 @@
         <FontFamily x:Key="MaterialSymbolsOutlined">
             /Assets/Fonts/MaterialSymbolsOutlined_28pt-Regular.ttf#Material Symbols Outlined 28pt
         </FontFamily>
-        <!--Buttons-->
 
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily"
+            Value="{StaticResource Jost}"/>
+        </Style>
+
+        <!--
+        ===========Buttons============
+        -->
+        
+        
+        <!--Toggle-->
+        <Style x:Key="ToggleStyle"
+       TargetType="ToggleButton">
+
+            <Setter Property="Width"
+            Value="50"/>
+
+            <Setter Property="Height"
+            Value="25"/>
+
+            <Setter Property="Background"
+            Value="#444444"/>
+
+            <Setter Property="BorderThickness"
+            Value="0"/>
+
+            <Setter Property="Cursor"
+            Value="Hand"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="ToggleButton">
+
+                        <Grid>
+
+                            <!-- Track -->
+                            <Border x:Name="Track"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="12.5"/>
+
+                            <!-- Thumb -->
+                            <Ellipse x:Name="Thumb"
+                             Width="19"
+                             Height="19"
+                             Fill="White"
+                             HorizontalAlignment="Left"
+                             Margin="3">
+
+                                <Ellipse.RenderTransform>
+                                    <TranslateTransform X="0"/>
+                                </Ellipse.RenderTransform>
+
+                            </Ellipse>
+
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsChecked"
+                             Value="True">
+
+                                <Setter TargetName="Track"
+                                Property="Background"
+                                Value="#A611ED"/>
+
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+
+                                            <DoubleAnimation
+                    Storyboard.TargetName="Thumb"
+                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                    To="25"
+                    Duration="0:0:0.15"/>
+
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+
+                                            <DoubleAnimation
+                    Storyboard.TargetName="Thumb"
+                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                    To="0"
+                    Duration="0:0:0.15"/>
+
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+        <!--SideNav Buttons-->
         <Style x:Key="SidebarButtonStyle"
        TargetType="Button">
 
@@ -26,13 +176,13 @@
             Value="Transparent"/>
 
             <Setter Property="Foreground"
-            Value="#c8c8c8"/>
+            Value="#C8C8C8"/>
 
             <Setter Property="BorderThickness"
             Value="0"/>
 
             <Setter Property="FontSize"
-            Value="16"/>    
+            Value="16"/>
 
             <Setter Property="FontWeight"
             Value="Regular"/>
@@ -41,7 +191,10 @@
             Value="{StaticResource Jost}"/>
 
             <Setter Property="HorizontalContentAlignment"
-            Value="Left"/>
+            Value="Stretch"/>
+
+            <Setter Property="HorizontalAlignment"
+            Value="Stretch"/>
 
             <Setter Property="Padding"
             Value="16,12"/>
@@ -57,10 +210,17 @@
 
                     <ControlTemplate TargetType="Button">
 
+                        <ControlTemplate.Resources>
+                            <SolidColorBrush x:Key="SidebarButtonBackground"
+                            Color="#232539"/>
+                        </ControlTemplate.Resources>
+
                         <Border x:Name="ButtonBorder"
-                        Background="{TemplateBinding Background}"
-                        CornerRadius="10"
-                        Padding="{TemplateBinding Padding}">
+                            Background="{StaticResource SidebarButtonBackground}"
+                            CornerRadius="0"
+                            Padding="{TemplateBinding Padding}">
+
+
 
                             <ContentPresenter
                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -72,23 +232,51 @@
 
                             <!-- Hover -->
                             <Trigger Property="IsMouseOver"
-                             Value="True">
+                                Value="True">
 
                                 <Setter Property="Foreground"
                                 Value="#C94FF8"/>
 
                             </Trigger>
 
-                            <!-- Selected / Active state (optional later) -->
-                            <!--<Trigger Property="IsPressed"
-                             Value="True">
+                            <!-- Active -->
+                            <Trigger Property="helpers:SidebarNavigation.IsActive"
+                            Value="True">
 
-                        <Setter TargetName="ButtonBorder"
-                                Property="Background"
-                                Value="#431C52"/>
+                                <!-- Active text/icon color -->
+                                <Setter Property="Foreground"
+                            Value="#C94FF8"/>
 
-                    </Trigger>-->
+                                <!-- Background animation -->
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
 
+                                            <ColorAnimation
+                    Storyboard.TargetName="ButtonBorder"
+                    Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                    To="#1B1D2E"
+                   Duration="{StaticResource MotionNormal}"/>
+
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+
+                                            <ColorAnimation
+                    Storyboard.TargetName="ButtonBorder"
+                    Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                    To="#232539"
+                    Duration="{StaticResource MotionNormal}"/>
+
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+
+                            </Trigger>
                         </ControlTemplate.Triggers>
 
                     </ControlTemplate>
@@ -97,5 +285,29 @@
             </Setter>
 
         </Style>
+
+        <!--Headers-->
+        <Style x:Key="SettingsSectionHeader"
+       TargetType="TextBlock">
+
+            <Setter Property="FontFamily"
+            Value="{StaticResource Jost}"/>
+
+            <Setter Property="FontSize"
+            Value="18"/>
+
+            <Setter Property="FontWeight"
+            Value="Regular"/>
+
+            <Setter Property="Foreground"
+            Value="#FEFEFE"/>
+
+            <Setter Property="Margin"
+            Value="0,0,0,16"/>
+
+        </Style>
+        
+        
+
     </Application.Resources>
 </Application>

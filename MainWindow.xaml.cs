@@ -1,4 +1,5 @@
-﻿using omni_multitool.Pages;
+﻿using omni_multitool.Helpers;
+using omni_multitool.Pages;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -6,6 +7,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -21,22 +23,52 @@ namespace omni_multitool
         {
             InitializeComponent();
 
-            MainFrame.Navigate(new FavoritesPage());
+            NavigateToPage(new FavoritesPage());
         }
 
         private void BtnFavorites_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new FavoritesPage());
+            SetActiveSidebarButton(BtnFavorites);
+            NavigateToPage(new FavoritesPage());
         }
 
         private void BtnUtilities_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new UtilitiesPage());
+            SetActiveSidebarButton(BtnUtilities);
+            NavigateToPage(new UtilitiesPage());
         }
 
         private void BtnSettings_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new SettingsPage());
+            SetActiveSidebarButton(BtnSettings);
+            NavigateToPage(new SettingsPage());
+        }
+
+        private void SetActiveSidebarButton(Button activeButton)
+        {
+            SidebarNavigation.SetIsActive(BtnFavorites, false);
+            SidebarNavigation.SetIsActive(BtnUtilities, false);
+            SidebarNavigation.SetIsActive(BtnSettings, false);
+
+            SidebarNavigation.SetIsActive(activeButton, true);
+        }
+
+
+        //Navigation Animation from App.xaml
+        private void NavigateToPage(Page page)
+        {
+            MainFrame.Navigate(page);
+
+            MainFrame.Opacity = 0;
+
+            DoubleAnimation fadeIn = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = (Duration)Application.Current.Resources["MotionPage"]
+            };
+
+            MainFrame.BeginAnimation(UIElement.OpacityProperty, fadeIn);
         }
     }
 }

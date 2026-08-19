@@ -16,6 +16,7 @@
     <None Remove="Assets\Fonts\Kodchasan-Bold.ttf" />
     <None Remove="Assets\Fonts\Kodchasan-Medium.ttf" />
     <None Remove="Assets\Fonts\Kodchasan-Regular.ttf" />
+    <None Remove="Assets\Fonts\materialdesignicons-webfont.ttf" />
     <None Remove="Assets\Fonts\MaterialSymbolsOutlined_28pt-Bold.ttf" />
     <None Remove="Assets\Fonts\MaterialSymbolsOutlined_28pt-Medium.ttf" />
     <None Remove="Assets\Fonts\MaterialSymbolsOutlined_28pt-Regular.ttf" />
@@ -35,6 +36,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Fonts\Kodchasan-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Fonts\materialdesignicons-webfont.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Fonts\MaterialSymbolsOutlined_28pt-Bold.ttf">
