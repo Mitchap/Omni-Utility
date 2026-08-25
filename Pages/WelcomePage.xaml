@@ -47,42 +47,57 @@
            Margin="0,184,0,0"
            Opacity="0.8"/>
 
-
         <!-- Branding -->
         <StackPanel
-        HorizontalAlignment="Center"
-        VerticalAlignment="Top"
-        Margin="0,180,0,0">
-            <TextBlock Text="OMNI"
-           FontFamily="{StaticResource Kodchasan}"
-           FontSize="120"
-           FontWeight="Regular"
-           HorizontalAlignment="Center">
+    HorizontalAlignment="Center"
+    VerticalAlignment="Top"
+    Margin="0,180,0,0">
 
-                <TextBlock.Foreground>
-                    <LinearGradientBrush StartPoint="0,0"
-                             EndPoint="1,0">
+            <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Center">
 
-                        <GradientStop Color="#A611ED"
-                          Offset="0"/>
+                <TextBlock Text="Ω "
+                   FontFamily="{StaticResource Kodchasan}"
+                   FontSize="120"
+                   FontWeight="Regular"
+                   Foreground="#A611ED"
+                   VerticalAlignment="Center"
+                   />
 
-                        <GradientStop Color="#D9A9F5"
-                          Offset="0.9"/>
+                <TextBlock Text="M N I"
+                   FontFamily="{StaticResource Kodchasan}"
+                   FontSize="120"
+                   FontWeight="Regular"
+                   VerticalAlignment="Center">
 
-                        <GradientStop Color="#FEFEFE"
-                          Offset="1"/>
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush StartPoint="0,0"
+                                     EndPoint="1,0">
 
-                    </LinearGradientBrush>
-                </TextBlock.Foreground>
+                            <GradientStop Color="#A611ED"
+                                  Offset="0"/>
 
-            </TextBlock>
+                            <GradientStop Color="#D9A9F5"
+                                  Offset="0.90"/>
+
+                            <GradientStop Color="#D2D2D2"
+                                  Offset="1"/>
+
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground>
+
+                </TextBlock>
+
+            </StackPanel>
+
+            <!-- Utility Suite -->
             <TextBlock Text="UTILITY SUITE"
-                   FontFamily="{StaticResource Jost}"
-                   FontSize="20"
-                   FontWeight="Thin"
-                   Foreground="#C8C8C8"
-                   HorizontalAlignment="Center"
-                   Margin="0,-20,0,0"/>
+               FontFamily="{StaticResource Jost}"
+               FontSize="20"
+               FontWeight="Thin"
+               Foreground="#C8C8C8"
+               HorizontalAlignment="Center"
+               Margin="0,-20,0,0"/>
 
         </StackPanel>
 

@@ -7,10 +7,12 @@
         xmlns:helpers="clr-namespace:omni_multitool.Helpers"
         mc:Ignorable="d"
         Title="MainWindow" 
-        MinWidth="900"
-        MinHeight="600"
         Width="1000"
         Height="600"
+        MinWidth="700"
+        MinHeight="600"
+        MaxWidth="1000"
+        MaxHeight="600"
         Background="#1B1D2E"
         WindowStartupLocation="CenterScreen">
     <Grid>

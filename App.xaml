@@ -44,6 +44,122 @@
 
         </Style>
 
+
+        <Style x:Key="UtilityCardStyle"
+       TargetType="Border">
+
+            <Setter Property="Width"
+            Value="200"/>
+
+            <Setter Property="Height"
+            Value="150"/>
+
+            <Setter Property="Background"
+            Value="#232539"/>
+
+            <!--<Setter Property="BorderBrush"
+            Value="#1b1b1b"/>-->
+
+            <Setter Property="BorderThickness"
+            Value="1"/>
+
+            <Setter Property="CornerRadius"
+            Value="8"/>
+
+            <Setter Property="Cursor"
+            Value="Hand"/>
+
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect
+                Color="#A611ED"
+                BlurRadius="0"
+                ShadowDepth="0"
+                Opacity="0"/>
+                </Setter.Value>
+            </Setter>
+
+
+            <Style.Triggers>
+
+                <!-- Mouse enters card -->
+                <EventTrigger RoutedEvent="MouseEnter">
+
+                    <BeginStoryboard>
+
+                        <Storyboard FillBehavior="HoldEnd">
+
+                            <DoubleAnimation
+                    Storyboard.TargetProperty="Effect.(DropShadowEffect.BlurRadius)"
+                    To="18"
+                    Duration="{StaticResource MotionFast}">
+
+                                <DoubleAnimation.EasingFunction>
+                                    <PowerEase Power="3"
+                                  EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+
+                            </DoubleAnimation>
+
+                            <DoubleAnimation
+                    Storyboard.TargetProperty="Effect.(DropShadowEffect.Opacity)"
+                    To="1"
+                    Duration="{StaticResource MotionFast}">
+
+                                <DoubleAnimation.EasingFunction>
+                                    <PowerEase Power="3"
+                                  EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+
+                            </DoubleAnimation>
+
+                        </Storyboard>
+
+                    </BeginStoryboard>
+
+                </EventTrigger>
+
+
+                <!-- Mouse leaves card -->
+                <EventTrigger RoutedEvent="MouseLeave">
+
+                    <BeginStoryboard>
+
+                        <Storyboard FillBehavior="HoldEnd">
+
+                            <DoubleAnimation
+                    Storyboard.TargetProperty="Effect.(DropShadowEffect.BlurRadius)"
+                    To="0"
+                    Duration="{StaticResource MotionFast}">
+
+                                <DoubleAnimation.EasingFunction>
+                                    <PowerEase Power="3"
+                                  EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+
+                            </DoubleAnimation>
+
+                            <DoubleAnimation
+                    Storyboard.TargetProperty="Effect.(DropShadowEffect.Opacity)"
+                    To="0"
+                    Duration="{StaticResource MotionFast}">
+
+                                <DoubleAnimation.EasingFunction>
+                                    <PowerEase Power="3"
+                                  EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+
+                            </DoubleAnimation>
+
+                        </Storyboard>
+
+                    </BeginStoryboard>
+
+                </EventTrigger>
+
+            </Style.Triggers>
+
+        </Style>
         <!--
         ============Fonts==============
         -->

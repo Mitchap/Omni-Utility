@@ -8,20 +8,22 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="UtilitiesPage">
 
-    <StackPanel Margin="30">
+    <Grid>
 
-        <!--Utilities Section-->
+        <StackPanel Margin="30">
 
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <!--Utilities Section-->
 
-            <Border Grid.Column="0"
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0"
                     Style="{StaticResource IconStyle}">
 
-                <TextBlock
+                    <TextBlock
                 FontFamily="{StaticResource MaterialSymbolsOutlined}"
                 Text="&#xE869;"
                 FontSize="22"
@@ -30,19 +32,206 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"/>
 
-            </Border>
+                </Border>
 
-            <TextBlock Grid.Column="1"
+                <TextBlock Grid.Column="1"
                Text="Utilities"
                Style="{StaticResource SettingsSectionHeader}"
                Margin="20,0,0,0"
                VerticalAlignment="Center"/>
-        </Grid>
+            </Grid>
 
-        <Border Height="1"
+            <Border Height="1"
                 Background="#444444"
                 Margin="0,20,0,20"/>
 
-    </StackPanel>
 
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Utility Cards -->
+
+                <UniformGrid Columns="3">
+
+                    <!--
+                    ============ auto clicker
+                    -->
+                    
+                    <Border Style="{StaticResource UtilityCardStyle}"
+            Margin="0,0,50,20">
+
+                        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+                            <TextBlock
+                FontFamily="{StaticResource MaterialSymbolsOutlined}"
+                Text="&#xF511;"
+                FontSize="28"
+                Foreground="#C94FF8"
+                HorizontalAlignment="Center"/>
+
+                            <TextBlock Text="Auto Clicker"
+                       FontFamily="{StaticResource Jost}"
+                       FontSize="18"
+                       Foreground="#FEFEFE"
+                       HorizontalAlignment="Center"
+                       Margin="0,12,0,0"/>
+
+                        </StackPanel>
+
+                    </Border>
+
+                    <!--
+                    ============ auto keyboard
+                    -->
+                    
+                    <Border Style="{StaticResource UtilityCardStyle}"
+            Margin="0,0,50,20">
+
+                        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+                            <TextBlock
+                FontFamily="{StaticResource MaterialSymbolsOutlined}"
+                Text="&#xF028;"
+                FontSize="28"
+                Foreground="#C94FF8"
+                HorizontalAlignment="Center"/>
+
+                            <TextBlock Text="Auto Keyboard"
+                       FontFamily="{StaticResource Jost}"
+                       FontSize="18"
+                       Foreground="#FEFEFE"
+                       HorizontalAlignment="Center"
+                       Margin="0,12,0,0"/>
+
+                        </StackPanel>
+
+                    </Border>
+
+                    <!--
+                    ============ color picker
+                    -->
+                    
+                    <Border Style="{StaticResource UtilityCardStyle}"
+            Margin="0,0,50,20">
+
+                        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+                            <TextBlock
+                FontFamily="{StaticResource MaterialSymbolsOutlined}"
+                Text="&#xE3B8;"
+                FontSize="28"
+                Foreground="#C94FF8"
+                HorizontalAlignment="Center"/>
+
+                            <TextBlock Text="Color Picker"
+                       FontFamily="{StaticResource Jost}"
+                       FontSize="18"
+                       Foreground="#FEFEFE"
+                       HorizontalAlignment="Center"
+                       Margin="0,12,0,0"/>
+
+                        </StackPanel>
+
+                    </Border>
+
+
+                    <!--
+                    ============ image converter
+                    -->
+
+                    <Border Style="{StaticResource UtilityCardStyle}"
+            Margin="0,0,50,20">
+
+                        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+                            <TextBlock
+                FontFamily="{StaticResource MaterialSymbolsOutlined}"
+                Text="&#xe3f4;"
+                FontSize="28"
+                Foreground="#C94FF8"
+                HorizontalAlignment="Center"/>
+
+                            <TextBlock Text="Image Converter"
+                       FontFamily="{StaticResource Jost}"
+                       FontSize="18"
+                       Foreground="#FEFEFE"
+                       HorizontalAlignment="Center"
+                       Margin="0,12,0,0"/>
+
+                        </StackPanel>
+
+                    </Border>
+
+
+                    <!--
+                    ============ unit converter
+                    -->
+
+                    <Border Style="{StaticResource UtilityCardStyle}"
+            Margin="0,0,50,20">
+
+                        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+                            <TextBlock
+                FontFamily="{StaticResource MaterialSymbolsOutlined}"
+                Text="&#xf6af;"
+                FontSize="28"
+                Foreground="#C94FF8"
+                HorizontalAlignment="Center"/>
+
+                            <TextBlock Text="Unit Converter"
+                       FontFamily="{StaticResource Jost}"
+                       FontSize="18"
+                       Foreground="#FEFEFE"
+                       HorizontalAlignment="Center"
+                       Margin="0,12,0,0"/>
+
+                        </StackPanel>
+
+                    </Border>
+
+
+                    <!--
+                    ============ water reminder
+                    -->
+
+                    <Border Style="{StaticResource UtilityCardStyle}"
+            Margin="0,0,50,20">
+
+                        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+                            <TextBlock
+                FontFamily="{StaticResource MaterialSymbolsOutlined}"
+                Text="&#xe798;"
+                FontSize="28"
+                Foreground="#C94FF8"
+                HorizontalAlignment="Center"/>
+
+                            <TextBlock Text="Water Reminder"
+                       FontFamily="{StaticResource Jost}"
+                       FontSize="18"
+                       Foreground="#FEFEFE"
+                       HorizontalAlignment="Center"
+                       Margin="0,12,0,0"/>
+
+                        </StackPanel>
+
+                    </Border>
+                </UniformGrid>
+                
+                
+            </Grid>
+
+
+        </StackPanel>
+    </Grid>
 </Page>
