@@ -56,4 +56,12 @@
     </Resource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\ImgConverter\" />
+    <Folder Include="Features\UnitConverter\" />
+    <Folder Include="Features\AutoKeyboard\" />
+    <Folder Include="Features\ColorPicker\" />
+    <Folder Include="Features\AutoClicker\" />
+  </ItemGroup>
+
 </Project>

@@ -11,7 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using omni_multitool.Features.WaterReminder;
 namespace omni_multitool
 {
     /// <summary>
@@ -25,7 +25,15 @@ namespace omni_multitool
 
             NavigateToPage(new FavoritesPage());
         }
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
 
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
         private void BtnFavorites_Click(object sender, RoutedEventArgs e)
         {
             SetActiveSidebarButton(BtnFavorites);
@@ -44,6 +52,12 @@ namespace omni_multitool
             NavigateToPage(new SettingsPage());
         }
 
+        private void BtnWater_Click(object sender, RoutedEventArgs e)
+        {
+            SetActiveSidebarButton(BtnUtilities);
+            NavigateToPage(new WaterReminderPage());
+        }
+
         private void SetActiveSidebarButton(Button activeButton)
         {
             SidebarNavigation.SetIsActive(BtnFavorites, false);
@@ -55,7 +69,7 @@ namespace omni_multitool
 
 
         //Navigation Animation from App.xaml
-        private void NavigateToPage(Page page)
+        public void NavigateToPage(Page page)
         {
             MainFrame.Navigate(page);
 
@@ -69,6 +83,11 @@ namespace omni_multitool
             };
 
             MainFrame.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+        }
+
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+
         }
     }
 }

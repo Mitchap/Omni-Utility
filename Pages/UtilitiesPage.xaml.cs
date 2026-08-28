@@ -1,4 +1,6 @@
-﻿using System;
+﻿using omni_multitool.Features.WaterReminder;
+using omni_multitool.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -22,5 +24,19 @@ namespace omni_multitool.Pages
         {
             InitializeComponent();
         }
+
+
+        // Uses the MainWindow's NavigateToPage method to navigate
+        // to the WaterReminderPage when the button is clicked
+
+        // NOTED: Use same approach for other buttons in the future if needed
+        private void BtnWater_Click(object sender, RoutedEventArgs e)
+        {
+            if (Window.GetWindow(this) is MainWindow mainWindow)
+            {
+                mainWindow.NavigateToPage(new WaterReminderPage());
+            }
+        }
+
     }
-}
+    }

@@ -39,6 +39,8 @@
                Style="{StaticResource SettingsSectionHeader}"
                Margin="20,0,0,0"
                VerticalAlignment="Center"/>
+                
+                
             </Grid>
 
             <Border Height="1"
@@ -60,7 +62,8 @@
                     ============ auto clicker
                     -->
                     
-                    <Border Style="{StaticResource UtilityCardStyle}"
+                
+                    <Button Style="{StaticResource UtilityCardStyle}"
             Margin="0,0,50,20">
 
                         <StackPanel HorizontalAlignment="Center"
@@ -82,13 +85,13 @@
 
                         </StackPanel>
 
-                    </Border>
+                    </Button>
 
                     <!--
                     ============ auto keyboard
                     -->
                     
-                    <Border Style="{StaticResource UtilityCardStyle}"
+                    <Button Style="{StaticResource UtilityCardStyle}"
             Margin="0,0,50,20">
 
                         <StackPanel HorizontalAlignment="Center"
@@ -110,13 +113,13 @@
 
                         </StackPanel>
 
-                    </Border>
+                    </Button>
 
                     <!--
                     ============ color picker
                     -->
                     
-                    <Border Style="{StaticResource UtilityCardStyle}"
+                    <Button Style="{StaticResource UtilityCardStyle}"
             Margin="0,0,50,20">
 
                         <StackPanel HorizontalAlignment="Center"
@@ -138,14 +141,14 @@
 
                         </StackPanel>
 
-                    </Border>
+                    </Button>
 
 
                     <!--
                     ============ image converter
                     -->
 
-                    <Border Style="{StaticResource UtilityCardStyle}"
+                    <Button Style="{StaticResource UtilityCardStyle}"
             Margin="0,0,50,20">
 
                         <StackPanel HorizontalAlignment="Center"
@@ -167,14 +170,14 @@
 
                         </StackPanel>
 
-                    </Border>
+                    </Button>
 
 
                     <!--
                     ============ unit converter
                     -->
 
-                    <Border Style="{StaticResource UtilityCardStyle}"
+                    <Button Style="{StaticResource UtilityCardStyle}"
             Margin="0,0,50,20">
 
                         <StackPanel HorizontalAlignment="Center"
@@ -196,36 +199,39 @@
 
                         </StackPanel>
 
-                    </Border>
+                    </Button>
 
 
                     <!--
                     ============ water reminder
                     -->
 
-                    <Border Style="{StaticResource UtilityCardStyle}"
-            Margin="0,0,50,20">
+                    <Button
+                    Style="{StaticResource UtilityCardStyle}"
+                    Margin="0,0,50,20"
+                    Click="BtnWater_Click">
 
                         <StackPanel HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
+                VerticalAlignment="Center">
 
                             <TextBlock
-                FontFamily="{StaticResource MaterialSymbolsOutlined}"
-                Text="&#xe798;"
-                FontSize="28"
-                Foreground="#C94FF8"
-                HorizontalAlignment="Center"/>
+            FontFamily="{StaticResource MaterialSymbolsOutlined}"
+            Text="&#xe798;"
+            FontSize="28"
+            Foreground="#C94FF8"
+            HorizontalAlignment="Center"/>
 
-                            <TextBlock Text="Water Reminder"
-                       FontFamily="{StaticResource Jost}"
-                       FontSize="18"
-                       Foreground="#FEFEFE"
-                       HorizontalAlignment="Center"
-                       Margin="0,12,0,0"/>
+                            <TextBlock
+            Text="Water Reminder"
+            FontFamily="{StaticResource Jost}"
+            FontSize="18"
+            Foreground="#FEFEFE"
+            HorizontalAlignment="Center"
+            Margin="0,12,0,0"/>
 
                         </StackPanel>
 
-                    </Border>
+                    </Button>
                 </UniformGrid>
                 
                 

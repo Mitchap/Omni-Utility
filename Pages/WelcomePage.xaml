@@ -9,13 +9,17 @@
         Title="MainWindow" 
         Width="1000"
         Height="600"
-        MinWidth="700"
+        MinWidth="1000"
         MinHeight="600"
         MaxWidth="1000"
         MaxHeight="600"
+        WindowStyle="None"
+        Background="#1B1D2E"
+        helpers:DraggableWindow.IsDraggable="True"
         WindowStartupLocation="CenterScreen">
 
     <Grid>
+
 
         <!-- Background -->
         <Grid.Background>
@@ -37,14 +41,48 @@
             </LinearGradientBrush>
         </Grid.Background>
 
+        <Grid Margin="0,20,0,0">
+            <!-- Window controls -->
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Margin="0,0,20,0">
 
-        <!-- Glass Cube -->
+            <Button Click="MinimizeButton_Click"
+                    Style="{StaticResource WindowControlButtonStyle}"
+                    Margin="0,0,15,0">
+
+                <TextBlock
+                    FontFamily="{StaticResource MaterialSymbolsOutlined}"
+                    Text="&#xE15B;"
+                    FontSize="18"
+                   
+                    />
+
+            </Button>
+
+            <Button Click="ExitButton_Click"
+                    Style="{StaticResource WindowControlButtonStyle}">
+
+                <TextBlock
+                     FontFamily="{StaticResource MaterialSymbolsOutlined}"
+                     Text="&#xE5CD;"
+                     FontSize="18"
+                     Margin="0,0,0,0"/>
+
+            </Button>
+
+        </StackPanel>
+
+    </Grid>
+
+    <!-- Glass Cube -->
         <Image Source="/Assets/Images/GlassCube.png"
            Width="522"
            Height="404"
            HorizontalAlignment="Center"
            VerticalAlignment="Top"
-           Margin="0,184,0,0"
+           Margin="0,200,0,0"
            Opacity="0.8"/>
 
         <!-- Branding -->
@@ -92,7 +130,6 @@
 
             <!-- Utility Suite -->
             <TextBlock Text="UTILITY SUITE"
-               FontFamily="{StaticResource Jost}"
                FontSize="20"
                FontWeight="Thin"
                Foreground="#C8C8C8"

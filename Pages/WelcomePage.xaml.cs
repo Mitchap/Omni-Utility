@@ -22,7 +22,15 @@ namespace omni_multitool.Pages
         {
             InitializeComponent();
         }
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
 
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
         private void ContinueGlow_Loaded(object sender, RoutedEventArgs e)
         {
             var startAnimation = new PointAnimation
