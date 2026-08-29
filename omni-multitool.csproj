@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Audio\mixkit-uplifting-flute.wav" />
     <None Remove="Assets\Fonts\Jost-Bold.ttf" />
     <None Remove="Assets\Fonts\Jost-Medium.ttf" />
     <None Remove="Assets\Fonts\Jost-Regular.ttf" />
@@ -21,6 +22,12 @@
     <None Remove="Assets\Fonts\MaterialSymbolsOutlined_28pt-Medium.ttf" />
     <None Remove="Assets\Fonts\MaterialSymbolsOutlined_28pt-Regular.ttf" />
     <None Remove="Assets\Images\GlassCube.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\Audio\mixkit-uplifting-flute.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

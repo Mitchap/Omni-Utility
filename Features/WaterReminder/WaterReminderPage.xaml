@@ -327,9 +327,16 @@
                     Grid.Column="1"
                     Foreground="#C8C8C8"
                     VerticalAlignment="Center"/>
+
+
                     </Grid>
-
-
+                    <Button
+                    Content="Test Sound"
+                    Click="BtnPlaySound_Click"
+                    Width="80"
+                    Height="40"
+                    Margin="10"
+                    HorizontalAlignment="Left"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
