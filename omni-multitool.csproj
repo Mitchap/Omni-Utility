@@ -27,7 +27,7 @@
 
   <ItemGroup>
     <Content Include="Assets\Audio\mixkit-uplifting-flute.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 

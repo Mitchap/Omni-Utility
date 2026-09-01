@@ -81,8 +81,9 @@
                     Margin="0,0,20,0">
 
 
-                        <Button Click="ExitButton_Click"
-                    Style="{StaticResource WindowControlButtonStyle}">
+                        <Button  
+                    Style="{StaticResource WindowControlButtonStyle}"
+                            Click="ExitButton_Click">
 
                             <TextBlock
                      FontFamily="{StaticResource MaterialSymbolsOutlined}"
@@ -125,29 +126,68 @@
             HorizontalAlignment="Center"
             Margin="0,8,0,0"
             />
-
+     
              <Button x:Name="ReminderOkayBtn"
              Content="Okay"
+             Click="ExitButton_Click"
              Background="#5E28B6"
              Foreground="#FEFEFE"
              BorderThickness="0"
-             FontFamily="{StaticResource Jost}"
              FontSize="14"
-             Cursor="Hand"
+             Cursor="Hand" 
              Width="80"
+             Height="25"
              Margin="0,20,0,0">
 
-             </Button>
+                    <Button.Template>
 
+                        <ControlTemplate TargetType="Button">
+
+                            <Border Background="{TemplateBinding Background}"
+                    CornerRadius="4">
+
+                                <ContentPresenter
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
+
+                            </Border>
+
+                        </ControlTemplate>
+
+                    </Button.Template>
+                </Button>
+
+
+
+             <Button x:Name="OpenReminderBtn"
+             Background="Transparent"
+             Foreground="#FEFEFE"
+             BorderThickness="0"
+             Cursor="Hand"
+             Height="25"
+             Margin="0,20,0,0">
             <TextBlock
             Text="Open Water Reminder"
             FontSize="12"
             Foreground="#C8C8C8"
             FontWeight="Thin"
             HorizontalAlignment="Center"
-            Margin="0,20,0,0"
             TextDecorations="Baseline"/>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
 
+                            <Border Background="{TemplateBinding Background}">
+
+                                <ContentPresenter
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
+
+                            </Border>
+
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                
             </StackPanel>
         </Grid>
 
