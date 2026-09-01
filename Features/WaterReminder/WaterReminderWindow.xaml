@@ -1,0 +1,156 @@
+﻿<Window x:Class="omni_multitool.Features.WaterReminder.WaterReminderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:omni_multitool.Features.WaterReminder"
+        xmlns:helpers="clr-namespace:omni_multitool.Helpers"
+        mc:Ignorable="d"
+        Title="WaterReminderWindow" Height="450" Width="700"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        helpers:DraggableWindow.IsDraggable="True"
+        WindowStartupLocation="CenterScreen">
+        <!--Background="#1B1D2E"-->
+    <Border Background="#1B1D2E"
+            CornerRadius="20"
+            BorderBrush="#C94FF8"
+            BorderThickness="1">
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            
+              <!--Header-->
+            <Border Grid.Row="0"
+        Grid.Column="0"
+        Grid.ColumnSpan="2"
+        Background="#232539"
+        CornerRadius="20,20,0,0">
+                <Grid>
+
+                    <!-- Branding -->
+                    <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Left"
+                Margin="20,0,0,0">
+
+                        <TextBlock Text="Ω "
+                   FontFamily="{StaticResource Kodchasan}"
+                   FontSize="18"
+                   FontWeight="Regular"
+                   Foreground="#A611ED"
+                   VerticalAlignment="Center"
+                   />
+
+                        <TextBlock Text="M N I"
+                   FontFamily="{StaticResource Kodchasan}"
+                   FontSize="18"
+                   FontWeight="Regular"
+                   VerticalAlignment="Center">
+
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0,0"
+                                     EndPoint="1,0">
+
+                                    <GradientStop Color="#A611ED"
+                                  Offset="0"/>
+
+                                    <GradientStop Color="#D9A9F5"
+                                  Offset="0.90"/>
+
+                                    <GradientStop Color="#D2D2D2"
+                                  Offset="1"/>
+
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+
+                        </TextBlock>
+
+                    </StackPanel>
+
+
+                    <!-- Window controls -->
+                    <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin="0,0,20,0">
+
+
+                        <Button Click="ExitButton_Click"
+                    Style="{StaticResource WindowControlButtonStyle}">
+
+                            <TextBlock
+                     FontFamily="{StaticResource MaterialSymbolsOutlined}"
+                     Text="&#xE5CD;"
+                     FontSize="18"
+                     Margin="0,0,0,0"/>
+
+                        </Button>
+
+                    </StackPanel>
+
+                </Grid>
+
+            </Border>
+
+            <StackPanel
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"
+    Grid.Row="1">
+
+           <Image Source="/Assets/Images/droplet.png"
+           Width="50"
+           Height="60"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Top"
+           Opacity="1"/>
+
+                <TextBlock
+            Text="Time to drink some water"
+            FontSize="22"
+            Foreground="#FEFEFE"
+            HorizontalAlignment="Center"
+            Margin="0,12,0,0"/>
+
+                <TextBlock
+            Text="Take a quick water break"
+            FontSize="16"
+            Foreground="#C8C8C8"
+            FontWeight="Thin"
+            HorizontalAlignment="Center"
+            Margin="0,8,0,0"
+            />
+
+             <Button x:Name="ReminderOkayBtn"
+             Content="Okay"
+             Background="#5E28B6"
+             Foreground="#FEFEFE"
+             BorderThickness="0"
+             FontFamily="{StaticResource Jost}"
+             FontSize="14"
+             Cursor="Hand"
+             Width="80"
+             Margin="0,20,0,0">
+
+             </Button>
+
+            <TextBlock
+            Text="Open Water Reminder"
+            FontSize="12"
+            Foreground="#C8C8C8"
+            FontWeight="Thin"
+            HorizontalAlignment="Center"
+            Margin="0,20,0,0"
+            TextDecorations="Baseline"/>
+
+            </StackPanel>
+        </Grid>
+
+
+    </Border>
+</Window>

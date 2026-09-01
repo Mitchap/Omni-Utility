@@ -21,6 +21,7 @@
     <None Remove="Assets\Fonts\MaterialSymbolsOutlined_28pt-Bold.ttf" />
     <None Remove="Assets\Fonts\MaterialSymbolsOutlined_28pt-Medium.ttf" />
     <None Remove="Assets\Fonts\MaterialSymbolsOutlined_28pt-Regular.ttf" />
+    <None Remove="Assets\Images\droplet.png" />
     <None Remove="Assets\Images\GlassCube.png" />
   </ItemGroup>
 
@@ -56,6 +57,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Fonts\MaterialSymbolsOutlined_28pt-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\droplet.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Images\GlassCube.png">

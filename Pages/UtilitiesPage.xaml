@@ -63,7 +63,7 @@
                     -->
                     
                 
-                    <Button Style="{StaticResource UtilityCardStyle}"
+                    <!--<Button Style="{StaticResource UtilityCardStyle}"
             Margin="0,0,50,20">
 
                         <StackPanel HorizontalAlignment="Center"
@@ -85,13 +85,13 @@
 
                         </StackPanel>
 
-                    </Button>
+                    </Button>-->
 
                     <!--
                     ============ auto keyboard
                     -->
                     
-                    <Button Style="{StaticResource UtilityCardStyle}"
+                    <!--<Button Style="{StaticResource UtilityCardStyle}"
             Margin="0,0,50,20">
 
                         <StackPanel HorizontalAlignment="Center"
@@ -113,7 +113,7 @@
 
                         </StackPanel>
 
-                    </Button>
+                    </Button>-->
 
                     <!--
                     ============ color picker

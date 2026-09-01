@@ -336,6 +336,7 @@
                     Width="80"
                     Height="40"
                     Margin="10"
+                    Cursor="Hand"
                     HorizontalAlignment="Left"/>
                 </StackPanel>
             </StackPanel>

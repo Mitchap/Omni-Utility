@@ -14,15 +14,15 @@
         MaxWidth="1000"
         MaxHeight="600"
         WindowStyle="None"
-        Background="#1B1D2E"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
         helpers:DraggableWindow.IsDraggable="True"
         WindowStartupLocation="CenterScreen">
-
-    <Grid>
-
-
+    <Border
+            CornerRadius="20">
         <!-- Background -->
-        <Grid.Background>
+        <Border.Background>
             <LinearGradientBrush StartPoint="0,0"
                              EndPoint="0,1">
 
@@ -39,45 +39,49 @@
                           Offset="1"/>
 
             </LinearGradientBrush>
-        </Grid.Background>
+        </Border.Background>
+        <Grid>
 
-        <Grid Margin="0,20,0,0">
-            <!-- Window controls -->
-        <StackPanel Orientation="Horizontal"
+
+
+
+            <Grid Margin="0,20,0,0">
+                <!-- Window controls -->
+                <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
                     Margin="0,0,20,0">
 
-            <Button Click="MinimizeButton_Click"
+                    <Button Click="MinimizeButton_Click"
                     Style="{StaticResource WindowControlButtonStyle}"
                     Margin="0,0,15,0">
 
-                <TextBlock
+                        <TextBlock
                     FontFamily="{StaticResource MaterialSymbolsOutlined}"
                     Text="&#xE15B;"
                     FontSize="18"
                    
                     />
 
-            </Button>
+                    </Button>
 
-            <Button Click="ExitButton_Click"
+                    <Button Click="ExitButton_Click"
                     Style="{StaticResource WindowControlButtonStyle}">
 
-                <TextBlock
+                        <TextBlock
                      FontFamily="{StaticResource MaterialSymbolsOutlined}"
                      Text="&#xE5CD;"
                      FontSize="18"
                      Margin="0,0,0,0"/>
 
-            </Button>
+                    </Button>
 
-        </StackPanel>
+                </StackPanel>
 
-    </Grid>
+            </Grid>
 
-    <!-- Glass Cube -->
-        <Image Source="/Assets/Images/GlassCube.png"
+            <!-- Glass Cube -->
+            <Image Source="/Assets/Images/GlassCube.png"
            Width="522"
            Height="404"
            HorizontalAlignment="Center"
@@ -85,16 +89,16 @@
            Margin="0,200,0,0"
            Opacity="0.8"/>
 
-        <!-- Branding -->
-        <StackPanel
+            <!-- Branding -->
+            <StackPanel
     HorizontalAlignment="Center"
     VerticalAlignment="Top"
     Margin="0,180,0,0">
 
-            <StackPanel Orientation="Horizontal"
+                <StackPanel Orientation="Horizontal"
                 HorizontalAlignment="Center">
 
-                <TextBlock Text="Ω "
+                    <TextBlock Text="Ω "
                    FontFamily="{StaticResource Kodchasan}"
                    FontSize="120"
                    FontWeight="Regular"
@@ -102,78 +106,78 @@
                    VerticalAlignment="Center"
                    />
 
-                <TextBlock Text="M N I"
+                    <TextBlock Text="M N I"
                    FontFamily="{StaticResource Kodchasan}"
                    FontSize="120"
                    FontWeight="Regular"
                    VerticalAlignment="Center">
 
-                    <TextBlock.Foreground>
-                        <LinearGradientBrush StartPoint="0,0"
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush StartPoint="0,0"
                                      EndPoint="1,0">
 
-                            <GradientStop Color="#A611ED"
+                                <GradientStop Color="#A611ED"
                                   Offset="0"/>
 
-                            <GradientStop Color="#D9A9F5"
+                                <GradientStop Color="#D9A9F5"
                                   Offset="0.90"/>
 
-                            <GradientStop Color="#D2D2D2"
+                                <GradientStop Color="#D2D2D2"
                                   Offset="1"/>
 
-                        </LinearGradientBrush>
-                    </TextBlock.Foreground>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
 
-                </TextBlock>
+                    </TextBlock>
 
-            </StackPanel>
+                </StackPanel>
 
-            <!-- Utility Suite -->
-            <TextBlock Text="UTILITY SUITE"
+                <!-- Utility Suite -->
+                <TextBlock Text="UTILITY SUITE"
                FontSize="20"
                FontWeight="Thin"
                Foreground="#C8C8C8"
                HorizontalAlignment="Center"
                Margin="0,-20,0,0"/>
 
-        </StackPanel>
+            </StackPanel>
 
 
-        <Grid Width="140"
+            <Grid Width="140"
       Height="40"
       Margin="0,320,0,0">
 
-            <!-- Animated border / glow -->
-            <Border x:Name="ContinueGlow"
+                <!-- Animated border / glow -->
+                <Border x:Name="ContinueGlow"
                 CornerRadius="10"
                 Loaded="ContinueGlow_Loaded">
 
-                <Border.Background>
-                    <LinearGradientBrush x:Name="ContinueGradient"
+                    <Border.Background>
+                        <LinearGradientBrush x:Name="ContinueGradient"
                              StartPoint="0,0"
                              EndPoint="1,0">
 
-                        <GradientStop Color="#431C52" Offset="0"/>
-                        <GradientStop Color="#6D2EFF" Offset="0.20"/>
-                        <GradientStop Color="#A611ED" Offset="0.40"/>
-                        <GradientStop Color="#C94FF8" Offset="0.55"/>
-                        <GradientStop Color="#6D2EFF" Offset="0.75"/>
-                        <GradientStop Color="#431C52" Offset="1"/>
+                            <GradientStop Color="#431C52" Offset="0"/>
+                            <GradientStop Color="#6D2EFF" Offset="0.20"/>
+                            <GradientStop Color="#A611ED" Offset="0.40"/>
+                            <GradientStop Color="#C94FF8" Offset="0.55"/>
+                            <GradientStop Color="#6D2EFF" Offset="0.75"/>
+                            <GradientStop Color="#431C52" Offset="1"/>
 
-                    </LinearGradientBrush>
-                </Border.Background>
+                        </LinearGradientBrush>
+                    </Border.Background>
 
-                <Border.Effect>
-                    <DropShadowEffect Color="#A611ED"
+                    <Border.Effect>
+                        <DropShadowEffect Color="#A611ED"
                           BlurRadius="12"
                           ShadowDepth="0"
                           Opacity="0.6"/>
-                </Border.Effect>
+                    </Border.Effect>
 
-            </Border>
+                </Border>
 
-            <!-- Actual button -->
-            <Button x:Name="BtnContinue"
+                <!-- Actual button -->
+                <Button x:Name="BtnContinue"
                 Content="Continue"
                 Margin="2"
                 Background="#1B1B1B"
@@ -184,45 +188,46 @@
                 Cursor="Hand"
                 Click="BtnContinue_Click">
 
-                <Button.Template>
+                    <Button.Template>
 
-                    <ControlTemplate TargetType="Button">
+                        <ControlTemplate TargetType="Button">
 
-                        <Border Background="{TemplateBinding Background}"
+                            <Border Background="{TemplateBinding Background}"
                     CornerRadius="8">
 
-                            <ContentPresenter
+                                <ContentPresenter
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"/>
 
-                        </Border>
+                            </Border>
 
-                    </ControlTemplate>
+                        </ControlTemplate>
 
-                </Button.Template>
+                    </Button.Template>
 
-            </Button>
+                </Button>
 
-            
-            
-        </Grid>
-        
-        
-        <!-- Don't show again -->
-        <CheckBox Content="Don't show this again"
+
+
+            </Grid>
+
+
+            <!-- Don't show again -->
+            <CheckBox Content="Don't show this again"
               HorizontalAlignment="Center"
               VerticalAlignment="Bottom"
               Margin="0,0,0,65"
               Foreground="#C8C8C8"
               Cursor="Hand"/>
 
-        <TextBlock Text="v0.1.0"
+            <TextBlock Text="v0.1.0"
            FontFamily="{StaticResource Jost}"
            FontSize="11"
            Foreground="#80FEFEFE"
            HorizontalAlignment="Right"
            VerticalAlignment="Bottom"
            Margin="0,0,20,15"/>
-        
-    </Grid>
+
+        </Grid>
+    </Border>
 </Window>

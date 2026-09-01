@@ -33,6 +33,11 @@ namespace omni_multitool.Features.WaterReminder
         {
             _reminderSound.Position = TimeSpan.Zero;
             _reminderSound.Play();
+
+            var waterReminderWindow = new WaterReminderWindow();
+            waterReminderWindow.Show();
         }
+
+
     }
 }

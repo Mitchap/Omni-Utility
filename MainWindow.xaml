@@ -14,33 +14,38 @@
         MaxWidth="1000"
         MaxHeight="600"
         WindowStyle="None"
-        Background="#1B1D2E"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
         helpers:DraggableWindow.IsDraggable="True"
         WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <Border Background="#1B1D2E"
+            CornerRadius="40">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="175"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="175"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
 
-        <Border Grid.Row="0"
-        Grid.Column="0"
-        Grid.ColumnSpan="2"
-        Background="#232539">
-            <Grid>
+            <Border Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Background="#232539"
+            CornerRadius="20,20,0,0">
+                <Grid>
 
-                <!-- Branding -->
-                <StackPanel Orientation="Horizontal"
+                    <!-- Branding -->
+                    <StackPanel Orientation="Horizontal"
                 HorizontalAlignment="Left"
                 Margin="20,0,0,0">
 
-                    <TextBlock Text="Ω "
+                        <TextBlock Text="Ω "
                    FontFamily="{StaticResource Kodchasan}"
                    FontSize="18"
                    FontWeight="Regular"
@@ -48,169 +53,171 @@
                    VerticalAlignment="Center"
                    />
 
-                    <TextBlock Text="M N I"
+                        <TextBlock Text="M N I"
                    FontFamily="{StaticResource Kodchasan}"
                    FontSize="18"
                    FontWeight="Regular"
                    VerticalAlignment="Center">
 
-                        <TextBlock.Foreground>
-                            <LinearGradientBrush StartPoint="0,0"
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0,0"
                                      EndPoint="1,0">
 
-                                <GradientStop Color="#A611ED"
+                                    <GradientStop Color="#A611ED"
                                   Offset="0"/>
 
-                                <GradientStop Color="#D9A9F5"
+                                    <GradientStop Color="#D9A9F5"
                                   Offset="0.90"/>
 
-                                <GradientStop Color="#D2D2D2"
+                                    <GradientStop Color="#D2D2D2"
                                   Offset="1"/>
 
-                            </LinearGradientBrush>
-                        </TextBlock.Foreground>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
 
-                    </TextBlock>
+                        </TextBlock>
 
-                </StackPanel>
+                    </StackPanel>
 
 
-                <!-- Window controls -->
-                <StackPanel Orientation="Horizontal"
+                    <!-- Window controls -->
+                    <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center"
                     Margin="0,0,20,0">
 
-                    <Button Click="MinimizeButton_Click"
+                        <Button Click="MinimizeButton_Click"
                     Style="{StaticResource WindowControlButtonStyle}"
                     Margin="0,0,15,0">
 
-                        <TextBlock
+                            <TextBlock
                     FontFamily="{StaticResource MaterialSymbolsOutlined}"
                     Text="&#xE15B;"
                     FontSize="18"
                    
                     />
 
-                    </Button>
+                        </Button>
 
-                    <Button Click="ExitButton_Click"
+                        <Button Click="ExitButton_Click"
                     Style="{StaticResource WindowControlButtonStyle}">
 
-                        <TextBlock
+                            <TextBlock
                      FontFamily="{StaticResource MaterialSymbolsOutlined}"
                      Text="&#xE5CD;"
                      FontSize="18"
                      Margin="0,0,0,0"/>
 
-                    </Button>
+                        </Button>
 
-                </StackPanel>
+                    </StackPanel>
 
-            </Grid>
+                </Grid>
 
-        </Border>
-        <!-- Sidebar -->
-        <Border Grid.Row="1"
-        Grid.Column="0"
-        Background="#272942">
+            </Border>
+            <!-- Sidebar -->
+            <Border Grid.Row="1"
+            Grid.Column="0"
+            Background="#272942"
+            CornerRadius="0,0,0,20">
 
-            <StackPanel
+                <StackPanel
                 Margin="0,10,0,0">
 
-                <!-- Favorites -->
-                <Button x:Name="BtnFavorites"
+                    <!-- Favorites -->
+                    <Button x:Name="BtnFavorites"
                 Click="BtnFavorites_Click"
                 Style="{StaticResource SidebarButtonStyle}"
                 HorizontalAlignment="Stretch"
                 helpers:SidebarNavigation.IsActive="True">
 
-                    <Grid>
+                        <Grid>
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="32"/>
-                        </Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="32"/>
+                            </Grid.ColumnDefinitions>
 
-                        <TextBlock Grid.Column="0"
+                            <TextBlock Grid.Column="0"
                            Text="Favorites"
                            VerticalAlignment="Center"/>
 
-                        <TextBlock Grid.Column="1"
+                            <TextBlock Grid.Column="1"
                            FontFamily="{StaticResource MaterialSymbolsOutlined}"
                            Text="&#xE87D;"
                            FontSize="16"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"/>
 
-                    </Grid>
+                        </Grid>
 
-                </Button>
+                    </Button>
 
-                <!-- Utilities -->
-                <Button x:Name="BtnUtilities"
+                    <!-- Utilities -->
+                    <Button x:Name="BtnUtilities"
                 Click="BtnUtilities_Click"
                 Style="{StaticResource SidebarButtonStyle}"
                 HorizontalAlignment="Stretch">
 
-                    <Grid>
+                        <Grid>
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="32"/>
-                        </Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="32"/>
+                            </Grid.ColumnDefinitions>
 
-                        <TextBlock Grid.Column="0"
+                            <TextBlock Grid.Column="0"
                            Text="Utilities"
                            VerticalAlignment="Center"/>
 
-                        <TextBlock Grid.Column="1"
+                            <TextBlock Grid.Column="1"
                            FontFamily="{StaticResource MaterialSymbolsOutlined}"
                            Text="&#xE869;"
                            FontSize="16"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"/>
 
-                    </Grid>
+                        </Grid>
 
-                </Button>
+                    </Button>
 
-                <!-- Settings -->
-                <Button x:Name="BtnSettings"
+                    <!-- Settings -->
+                    <Button x:Name="BtnSettings"
                 Click="BtnSettings_Click"
                 Style="{StaticResource SidebarButtonStyle}"
                 HorizontalAlignment="Stretch">
 
-                    <Grid>
+                        <Grid>
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="32"/>
-                        </Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="32"/>
+                            </Grid.ColumnDefinitions>
 
-                        <TextBlock Grid.Column="0"
+                            <TextBlock Grid.Column="0"
                            Text="Settings"
                            VerticalAlignment="Center"/>
 
-                        <TextBlock Grid.Column="1"
+                            <TextBlock Grid.Column="1"
                            FontFamily="{StaticResource MaterialSymbolsOutlined}"
                            Text="&#xE8B8;"
                            FontSize="16"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"/>
 
-                    </Grid>
+                        </Grid>
 
-                </Button>
+                    </Button>
 
-            </StackPanel>
+                </StackPanel>
 
-        </Border>
-        <!-- Content Area -->
-        <Frame x:Name="MainFrame"
+            </Border>
+            <!-- Content Area -->
+            <Frame x:Name="MainFrame"
        Grid.Row="1"
        Grid.Column="1"
        NavigationUIVisibility="Hidden"
        />
-    </Grid>
+        </Grid>
+    </Border>
 </Window>

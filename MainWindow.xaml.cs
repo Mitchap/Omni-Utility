@@ -27,7 +27,7 @@ namespace omni_multitool
         }
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.Application.Current.Shutdown();
+            Close();
         }
 
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
