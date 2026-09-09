@@ -7,6 +7,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+	 <ApplicationIcon>Assets\Images\omni-icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +24,8 @@
     <None Remove="Assets\Fonts\MaterialSymbolsOutlined_28pt-Regular.ttf" />
     <None Remove="Assets\Images\droplet.png" />
     <None Remove="Assets\Images\GlassCube.png" />
+    <None Remove="Assets\Images\lonely.png" />
+    <None Remove="Assets\Images\omni-icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -65,14 +68,30 @@
     <Resource Include="Assets\Images\GlassCube.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Images\lonely.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\omni-icon.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Features\ImgConverter\" />
     <Folder Include="Features\UnitConverter\" />
     <Folder Include="Features\AutoKeyboard\" />
-    <Folder Include="Features\ColorPicker\" />
     <Folder Include="Features\AutoClicker\" />
+    <Folder Include="installer\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PixiEditor.ColorPicker" Version="3.4.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="build-installer.ps1">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -2,3 +2,18 @@
 bin/
 obj/
 *.user
+
+
+
+# Build output
+bin/
+obj/
+
+# Publish output
+publish/
+
+# Installer build output
+installer/Output/
+
+# Distribution builds
+dist/

@@ -126,8 +126,8 @@
             HorizontalAlignment="Center"
             Margin="0,8,0,0"
             />
-     
-             <Button x:Name="ReminderOkayBtn"
+
+                <Button x:Name="ReminderOkayBtn"
              Content="Okay"
              Click="ExitButton_Click"
              Background="#5E28B6"
@@ -158,9 +158,9 @@
                 </Button>
 
 
-
-             <Button x:Name="OpenReminderBtn"
+                <Button x:Name="OpenReminderBtn"
              Background="Transparent"
+             Click="OpenReminderBtn_Click"
              Foreground="#FEFEFE"
              BorderThickness="0"
              Cursor="Hand"
@@ -180,7 +180,8 @@
 
                                 <ContentPresenter
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
+                    VerticalAlignment="Center"
+                    />
 
                             </Border>
 

@@ -45,6 +45,83 @@
                 Background="#444444"
                 Margin="0,20,0,20"/>
 
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                
+                <StackPanel
+                Grid.Column="0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+
+
+                    <!-- Utility Suite -->
+                    <TextBlock Text="It's lonely in here . . ."
+               FontSize="28"
+               FontWeight="Regular"
+               Foreground="#C8C8C8"
+               HorizontalAlignment="Center"
+               Margin="0,0,0,0"/>
+
+
+                    <!-- Utility Suite -->
+                    <TextBlock Text="Let's add some friends"
+               FontSize="16"
+               FontWeight="Regular"
+               Foreground="#C8C8C8"
+               HorizontalAlignment="Left"
+               Margin="0,0,0,0"/>
+
+             <Button x:Name="AddFavoriteBtn"
+             Content="Add Favorite"
+             Click="BtnFavorites_Click"
+             Background="#5E28B6"
+             Foreground="#FEFEFE"
+             BorderThickness="0"
+             FontSize="14"
+             Cursor="Hand" 
+             Width="auto"
+             Height="auto"
+             Margin="0,20,0,0"
+             Padding="10,4"
+             HorizontalAlignment="Left">
+
+                        <Button.Template>
+
+                            <ControlTemplate TargetType="Button">
+
+                                <Border Background="{TemplateBinding Background}"
+                                        Padding="{TemplateBinding Padding}"
+                                        CornerRadius="4"
+                                        >
+
+                                    <ContentPresenter
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    />
+
+                                </Border>
+
+                            </ControlTemplate>
+
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+
+
+
+                <Image Source="/Assets/Images/lonely.png"
+           Width="300"
+           Height="300"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Center"
+           Grid.Column="1"/>
+            </Grid>
+
+
         </StackPanel>
 
     </Grid>

@@ -34,10 +34,14 @@ namespace omni_multitool.Features.WaterReminder
             _reminderSound.Position = TimeSpan.Zero;
             _reminderSound.Play();
 
+
+        }
+
+        private void BtnTestNotif_Click(object sender, RoutedEventArgs e)
+        {
             var waterReminderWindow = new WaterReminderWindow();
             waterReminderWindow.Show();
         }
-
 
     }
 }

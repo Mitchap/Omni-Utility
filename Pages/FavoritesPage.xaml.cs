@@ -1,4 +1,5 @@
-﻿using System;
+﻿using omni_multitool.Features.Favorites;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,14 @@ namespace omni_multitool.Pages
         public FavoritesPage()
         {
             InitializeComponent();
+        }
+
+        private void BtnFavorites_Click(object sender, RoutedEventArgs e)
+        {
+            if (Window.GetWindow(this) is MainWindow mainWindow)
+            {
+                mainWindow.NavigateToPage(new EditFavoritesPage());
+            }
         }
     }
 }

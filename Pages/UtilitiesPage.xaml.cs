@@ -1,4 +1,5 @@
 ﻿using omni_multitool.Features.WaterReminder;
+using omni_multitool.Features.ColorPickerTool;
 using omni_multitool.Helpers;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,14 @@ namespace omni_multitool.Pages
             if (Window.GetWindow(this) is MainWindow mainWindow)
             {
                 mainWindow.NavigateToPage(new WaterReminderPage());
+            }
+        }
+
+        private void BtnColor_Click(object sender, RoutedEventArgs e)
+        {
+            if (Window.GetWindow(this) is MainWindow mainWindow)
+            {
+                mainWindow.NavigateToPage(new ColorPickerPage());
             }
         }
 

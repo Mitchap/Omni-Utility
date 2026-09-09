@@ -3,8 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:omni_multitool"
              xmlns:helpers="clr-namespace:omni_multitool.Helpers"
-             StartupUri="/Pages/WelcomePage.xaml">
+             StartupUri="/Pages/WelcomePage.xaml"
+              ShutdownMode="OnExplicitShutdown">
     <Application.Resources>
+
 
         <!--Motion Animations-->
         <Duration x:Key="MotionFast">0:0:0.15</Duration>
@@ -604,8 +606,7 @@
             Value="0,0,0,16"/>
 
         </Style>
-        
-        
+
 
     </Application.Resources>
 </Application>

@@ -338,6 +338,15 @@
                     Margin="10"
                     Cursor="Hand"
                     HorizontalAlignment="Left"/>
+
+                    <Button
+                    Content="Test Notif"
+                    Click="BtnTestNotif_Click"
+                    Width="80"
+                    Height="40"
+                    Margin="10"
+                    Cursor="Hand"
+                    HorizontalAlignment="Left"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
