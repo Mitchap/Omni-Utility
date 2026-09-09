@@ -1,5 +1,5 @@
 ﻿<p align="center">
-  <img src="Docs/omni-banner.png" alt="OMNI Multitool" width="700" />
+  <img src="Docs/omni-banner.png" alt="OMNI Multitool" width="400" />
 </p>
 
 # OMNI Multitool
