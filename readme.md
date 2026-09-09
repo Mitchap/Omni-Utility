@@ -1,14 +1,14 @@
 ﻿<p align="center">
-  <img src="Docs/omni-banner.png" alt="OMNI Multitool" width="400" />
+  <img src="Docs/omni-banner.png" alt="OMNI Utility Suite" width="400" />
 </p>
 
-# OMNI Multitool
+# OMNI Utility Suite
 
 A lightweight collection of desktop utilities built with **WPF and .NET**.
 
 ## Goal
 
-OMNI is a personal desktop multitool designed to bring commonly used utilities into a single, simple application.
+OMNI is a personal desktop Utility Suite designed to bring commonly used utilities into a single, simple application.
 
 The project also serves as a practical exercise in rebuilding and refining my WPF development skills through hands-on implementation, UI experimentation, and reusable components.
 
