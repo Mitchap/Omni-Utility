@@ -72,9 +72,10 @@
         FontSize="22"
         FontWeight="Medium"
         Foreground="#C94FF8"/>
-                
                 <!--color picker MahApps controls-->
-                <colorpicker:StandardColorPicker x:Name="main" />
+                <colorpicker:StandardColorPicker
+                Style="{StaticResource DefaultColorPickerStyle}" />
+                <colorpicker:StandardColorPicker />
                 <colorpicker:PortableColorPicker ColorState="{Binding ElementName=main, Path=ColorState, Mode=TwoWay}" />
             </StackPanel>
 

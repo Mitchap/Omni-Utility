@@ -4,11 +4,13 @@
              xmlns:local="clr-namespace:omni_multitool"
              xmlns:helpers="clr-namespace:omni_multitool.Helpers"
              StartupUri="/Pages/WelcomePage.xaml"
-              ShutdownMode="OnExplicitShutdown">
+             ShutdownMode="OnExplicitShutdown">
+    
     <Application.Resources>
 
+        <ResourceDictionary >
 
-        <!--Motion Animations-->
+            <!--Motion Animations-->
         <Duration x:Key="MotionFast">0:0:0.15</Duration>
         <Duration x:Key="MotionNormal">0:0:0.18</Duration>
         <Duration x:Key="MotionPage">0:0:0.30</Duration>
@@ -608,5 +610,12 @@
         </Style>
 
 
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ColorPicker;component/Styles/DefaultColorPickerStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
     </Application.Resources>
+    
+    
 </Application>
