@@ -17,11 +17,10 @@
         ResizeMode="NoResize"
         AllowsTransparency="True"
         Background="Transparent"
-        helpers:DraggableWindow.IsDraggable="True"
         WindowStartupLocation="CenterScreen">
     <Border Background="#1B1D2E"
             CornerRadius="40">
-        <Grid>
+        <Grid >
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="*"/>
@@ -38,12 +37,15 @@
             Grid.ColumnSpan="2"
             Background="#232539"
             CornerRadius="20,20,0,0">
-                <Grid>
+                <Grid x:Name="TitleBar"
+                      Background="Transparent"
+                      helpers:DraggableWindow.IsDraggable="True">
 
                     <!-- Branding -->
                     <StackPanel Orientation="Horizontal"
                 HorizontalAlignment="Left"
-                Margin="20,0,0,0">
+                Margin="20,0,0,0"
+               >
 
                         <TextBlock Text="Ω "
                    FontFamily="{StaticResource Kodchasan}"

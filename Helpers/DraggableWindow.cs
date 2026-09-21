@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace omni_multitool.Helpers
 {
-    public static class DraggableWindow
+    public static class DraggableWindow 
     {
-        public static bool GetIsDraggable(Window window) =>
-            (bool)window.GetValue(IsDraggableProperty);
+        public static bool GetIsDraggable(DependencyObject element) =>
+            (bool)element.GetValue(IsDraggableProperty);
 
-        public static void SetIsDraggable(Window window, bool value) =>
-            window.SetValue(IsDraggableProperty, value);
+        public static void SetIsDraggable(DependencyObject element, bool value) =>
+            element.SetValue(IsDraggableProperty, value);
 
         public static readonly DependencyProperty IsDraggableProperty =
             DependencyProperty.RegisterAttached(
@@ -21,27 +23,55 @@ namespace omni_multitool.Helpers
                 typeof(DraggableWindow),
                 new PropertyMetadata(false, OnIsDraggableChanged)
             );
-
-        private static void OnIsDraggableChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        
+        private static void OnIsDraggableChanged(
+            DependencyObject d,
+            DependencyPropertyChangedEventArgs e)
         {
-            if (d is not Window window) return;
+            if (d is not FrameworkElement element) return;
 
             if ((bool)e.NewValue)
             {
-                window.MouseLeftButtonDown += Window_MouseLeftButtonDown;
+                element.PreviewMouseLeftButtonDown += TitleBar_MouseLeftButtonDown;
             }
             else
             {
-                window.MouseLeftButtonDown -= Window_MouseLeftButtonDown;
+                element.PreviewMouseLeftButtonDown -= TitleBar_MouseLeftButtonDown;
             }
         }
 
-        private static void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private static void TitleBar_MouseLeftButtonDown(
+            object sender,
+            MouseButtonEventArgs e)
         {
-            if (sender is Window window && e.ButtonState == MouseButtonState.Pressed)
+            if (e.OriginalSource is DependencyObject source &&
+                FindParent<Button>(source) is not null)
+            {
+                return;
+            }
+
+            if (sender is FrameworkElement element &&
+                Window.GetWindow(element) is Window window &&
+                e.ButtonState == MouseButtonState.Pressed)
             {
                 window.DragMove();
             }
+        }
+        //Helper for titlebar drag handler
+        private static T? FindParent<T>(DependencyObject child)
+        where T : DependencyObject
+        {
+            DependencyObject? parent = child;
+
+            while (parent is not null)
+            {
+                if (parent is T target)
+                    return target;
+
+                parent = VisualTreeHelper.GetParent(parent);
+            }
+
+            return null;
         }
     }
 }

@@ -40,7 +40,7 @@
 
             </LinearGradientBrush>
         </Border.Background>
-        <Grid>
+        <Grid x:Name="TitleBar">
 
 
 
