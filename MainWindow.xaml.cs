@@ -17,6 +17,7 @@ namespace omni_multitool
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -28,6 +29,15 @@ namespace omni_multitool
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void CloseConfirm_Click(object sender, RoutedEventArgs e)
+        {
+            var closeConfirmWindow = new CloseConfirmWindow
+            {
+                Owner = this
+            };
+            closeConfirmWindow.ShowDialog();
         }
 
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
@@ -86,6 +96,11 @@ namespace omni_multitool
         }
 
         private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }

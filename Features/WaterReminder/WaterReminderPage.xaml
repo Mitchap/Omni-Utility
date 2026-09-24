@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:omni_multitool.Features.WaterReminder"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="750" d:DesignWidth="800"
       Title="WaterReminder">
 
 
@@ -156,10 +156,10 @@
                 Height="1"
                 Background="#444444"
                 Margin="0,20,0,20"/>
-                            <!-- "Reminder me every" -->
+                            <!-- "Remind me every" -->
                     <TextBlock
                 Grid.Column="0"
-                Text="Reminder me every"
+                Text="Remind me every"
                 Foreground="#FEFEFE"
                 FontSize="18"
                 VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="0,0,75,0"/>
@@ -202,7 +202,7 @@
                 <Grid Margin="10,20,0,0">
                 <TextBlock
                 Grid.Column="0"
-                Text="Remind me between 8:00 AM and 10:00 PM"
+                Text="*Reminders between 8:00 AM and 10:00 PM"
                 Foreground="#FEFEFE"
                 FontSize="18"
                 VerticalAlignment="Center"/>

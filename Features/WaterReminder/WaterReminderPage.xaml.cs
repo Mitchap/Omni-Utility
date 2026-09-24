@@ -41,6 +41,10 @@ namespace omni_multitool.Features.WaterReminder
         {
             var waterReminderWindow = new WaterReminderWindow();
             waterReminderWindow.Show();
+            //Reused notif sound logic 
+            _reminderSound.Position = TimeSpan.Zero;
+            _reminderSound.Play();
+
         }
 
     }

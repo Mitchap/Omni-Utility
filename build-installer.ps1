@@ -29,7 +29,7 @@ try {
 
     Write-Host ""
     Write-Host "========================================"
-    Write-Host " Publishing Omni Multitool $Version"
+    Write-Host " Publishing Omni Utility Suite $Version"
     Write-Host "========================================"
 
     dotnet publish $projectFile `
@@ -56,7 +56,7 @@ try {
         throw "Publish directory was not created: $publishDir"
     }
 
-    $publishedExe = Join-Path $publishDir "omni-multitool.exe"
+    $publishedExe = Join-Path $publishDir "omni-utility-suite.exe"
 
     if (-not (Test-Path $publishedExe)) {
         throw "Published executable was not found: $publishedExe"
@@ -115,7 +115,7 @@ try {
 
     $installerExe = Join-Path `
         $installerOutputDir `
-        "Omni-Multitool-$Version-Setup.exe"
+        "Omni-Utility-Suite-$Version-Setup.exe"
 
     if (-not (Test-Path $installerExe)) {
 

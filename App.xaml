@@ -3,12 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:omni_multitool"
              xmlns:helpers="clr-namespace:omni_multitool.Helpers"
+             xmlns:tb="http://www.hardcodet.net/taskbar"
              StartupUri="/Pages/WelcomePage.xaml"
              ShutdownMode="OnExplicitShutdown">
     
+    
+
     <Application.Resources>
 
+        
         <ResourceDictionary >
+
+            <tb:TaskbarIcon
+            x:Key="OmniTrayIcon"
+            IconSource="/Assets/Images/omni-icon.ico"
+            ToolTipText="OMNI Utility Suite"
+            TrayLeftMouseDown="TrayIcon_LeftMouseDown">
+
+                <tb:TaskbarIcon.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Open OMNI"
+                      Click="OpenOmni_Click" />
+
+                        <Separator />
+
+                        <!--<MenuItem Header="Quit OMNI"
+                      Click="QuitOmni_Click" />-->
+                    </ContextMenu>
+                </tb:TaskbarIcon.ContextMenu>
+
+            </tb:TaskbarIcon>
+
 
             <!--Motion Animations-->
         <Duration x:Key="MotionFast">0:0:0.15</Duration>

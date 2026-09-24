@@ -101,7 +101,7 @@
 
                         </Button>
 
-                        <Button Click="ExitButton_Click"
+                        <Button Click="CloseConfirm_Click"
                     Style="{StaticResource WindowControlButtonStyle}">
 
                             <TextBlock
