@@ -197,10 +197,10 @@
                     
             <TextBlock
             Text="Cancel"
-            FontSize="12"
+            FontSize="14"
             Foreground="#C8C8C8"
             FontWeight="Thin"
-            TextDecorations="Baseline"/>
+            TextDecorations="None"/>
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
 

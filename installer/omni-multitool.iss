@@ -1,4 +1,4 @@
-#define AppName "Omni Multitool"
+#define AppName "OMNI Utility Suite"
 
 #ifndef AppVersion
 #define AppVersion "0.1.0"
@@ -13,12 +13,14 @@ AppId={{8F4E9A21-7B63-4D82-A5C9-1E6F3B742D90}
 AppName={#AppName}
 AppVersion={#AppVersion}
 AppPublisher={#AppPublisher}
-DefaultDirName={autopf}\Omni Multitool
+DefaultDirName={autopf}\OMNI Utility Suite
 DefaultGroupName={#AppName}
 DisableProgramGroupPage=yes
 PrivilegesRequired=lowest
 OutputDir=Output
-OutputBaseFilename=Omni-Multitool-{#AppVersion}-Setup
+OutputBaseFilename=Omni-Utility-Suite-{#AppVersion}-Setup
+SetupIconFile={#IconFile}
+UninstallDisplayIcon={app}\{#ExeName}
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
