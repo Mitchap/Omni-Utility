@@ -127,6 +127,23 @@ Current version:
 OMNI is currently under active development. Features and UI may change between releases.
 
 ---
+## Pending Tasks
+
+### To Fix
+
+* [ ] Make the Welcome Page's "Don't show this again" checkbox work.
+
+### To Do
+
+* [ ] Implement Favorites functionality.
+* [ ] Add Image Converter.
+* [ ] Add Unit Converter.
+* [ ] Test application settings and Water Reminder persistence.
+* [ ] Test system tray, background reminders, and single-instance behavior.
+* [ ] Verify installer, updates, and uninstallation.
+* [ ] Finalize testing and release packaging.
+
+---
 
 ## License
 
