@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -36,18 +36,10 @@ namespace omni_multitool.Features.WaterReminder
 
         private void OpenReminderBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow? mainWindow = Application.Current.Windows
-                .OfType<MainWindow>()
-                .FirstOrDefault();
-
-            if (mainWindow == null)
+            if (Application.Current is App app)
             {
-                mainWindow = new MainWindow();
-                mainWindow.Show();
+                app.RestoreMainWindowAndNavigate(new WaterReminderPage());
             }
-
-            mainWindow.NavigateToPage(new WaterReminderPage());
-            mainWindow.Activate();
 
             Close();
         }

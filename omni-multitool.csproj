@@ -26,6 +26,7 @@
     <None Remove="Assets\Images\GlassCube.png" />
     <None Remove="Assets\Images\lonely.png" />
     <None Remove="Assets\Images\omni-icon.ico" />
+    <None Remove="Assets\Images\purple_bg.png" />
     <None Remove="Assets\Images\water.gif" />
   </ItemGroup>
 
@@ -73,6 +74,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Images\omni-icon.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\purple_bg.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Images\water.gif">

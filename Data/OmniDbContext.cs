@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using omni_multitool.Data.Models;
+using System.IO;
 
 namespace omni_multitool.Data;
 
@@ -10,6 +11,23 @@ public class OmniDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite("Data Source=omni.db");
+
+        //%LOCALAPPDATA%/OMNI Utility Suite/omni.db
+
+
+        string appDataPath = Environment.GetFolderPath(
+            Environment.SpecialFolder.LocalApplicationData);
+
+        string omniPath = Path.Combine(
+            appDataPath,
+            "OMNI Utility Suite");
+
+        Directory.CreateDirectory(omniPath);
+
+        string databasePath = Path.Combine(
+            omniPath,
+            "omni.db");
+
+        optionsBuilder.UseSqlite($"Data Source={databasePath}");
     }
 }

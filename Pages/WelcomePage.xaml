@@ -21,24 +21,13 @@
         WindowStartupLocation="CenterScreen">
     <Border
             CornerRadius="20">
-        <!-- Background -->
         <Border.Background>
-            <LinearGradientBrush StartPoint="0,0"
-                             EndPoint="0,1">
-
-                <GradientStop Color="#1B1B1B"
-                          Offset="0"/>
-
-                <GradientStop Color="#1B1B1B"
-                          Offset="0.70"/>
-
-                <GradientStop Color="#29202D"
-                          Offset="0.90"/>
-
-                <GradientStop Color="#431C52"
-                          Offset="1"/>
-
-            </LinearGradientBrush>
+            <ImageBrush
+        ImageSource="/Assets/Images/purple_bg.png"
+        Stretch="UniformToFill"
+        AlignmentX="Center"
+        AlignmentY="Center"
+        Opacity="1"/>
         </Border.Background>
         <Grid x:Name="TitleBar">
 
@@ -80,27 +69,20 @@
 
             </Grid>
 
-            <!-- Glass Cube -->
-            <Image Source="/Assets/Images/GlassCube.png"
-           Width="522"
-           Height="404"
-           HorizontalAlignment="Center"
-           VerticalAlignment="Top"
-           Margin="0,200,0,0"
-           Opacity="0.8"/>
+
 
             <!-- Branding -->
             <StackPanel
-    HorizontalAlignment="Center"
+    HorizontalAlignment="Left"
     VerticalAlignment="Top"
-    Margin="0,180,0,0">
+    Margin="120,180,0,0">
 
                 <StackPanel Orientation="Horizontal"
                 HorizontalAlignment="Center">
 
                     <TextBlock Text="Ω "
                    FontFamily="{StaticResource Kodchasan}"
-                   FontSize="120"
+                   FontSize="100"
                    FontWeight="Regular"
                    Foreground="#A611ED"
                    VerticalAlignment="Center"
@@ -108,7 +90,7 @@
 
                     <TextBlock Text="M N I"
                    FontFamily="{StaticResource Kodchasan}"
-                   FontSize="120"
+                   FontSize="100"
                    FontWeight="Regular"
                    VerticalAlignment="Center">
 
@@ -135,17 +117,17 @@
                 <!-- Utility Suite -->
                 <TextBlock Text="UTILITY SUITE"
                FontSize="20"
-               FontWeight="Thin"
                Foreground="#C8C8C8"
-               HorizontalAlignment="Center"
-               Margin="0,-20,0,0"/>
+               HorizontalAlignment="Left"
+               Margin="10,-10,0,0"/>
 
             </StackPanel>
 
 
             <Grid Width="140"
       Height="40"
-      Margin="0,320,0,0">
+      Margin="120,200,0,0"
+      HorizontalAlignment="Left"            >
 
                 <!-- Animated border / glow -->
                 <Border x:Name="ContinueGlow"
@@ -176,7 +158,7 @@
 
                 </Border>
 
-                <!-- Actual button -->
+                <!-- Continue button -->
                 <Button x:Name="BtnContinue"
                 Content="Continue"
                 Margin="2"
@@ -214,9 +196,9 @@
 
             <!-- Don't show again -->
             <CheckBox Content="Don't show this again"
-              HorizontalAlignment="Center"
+              HorizontalAlignment="Left"
               VerticalAlignment="Bottom"
-              Margin="0,0,0,65"
+              Margin="120,0,0,65"
               Foreground="#C8C8C8"
               Cursor="Hand"/>
 

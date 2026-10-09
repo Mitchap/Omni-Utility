@@ -1,4 +1,4 @@
-﻿<Page x:Class="omni_multitool.Pages.SettingsPage"
+<Page x:Class="omni_multitool.Pages.SettingsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -56,6 +56,8 @@
                 </Grid.ColumnDefinitions>
 
                 <ToggleButton
+            x:Name="ToggleStartWithWindows"
+            Click="SettingToggle_Click"
             Style="{StaticResource ToggleStyle}"
             Margin="10"
             Grid.Column="0"/>
@@ -75,6 +77,8 @@
                 </Grid.ColumnDefinitions>
 
                 <ToggleButton
+            x:Name="ToggleMinimizeToTray"
+            Click="SettingToggle_Click"
             Style="{StaticResource ToggleStyle}"
             Margin="10"
             Grid.Column="0"/>
@@ -94,6 +98,8 @@
                 </Grid.ColumnDefinitions>
 
                 <ToggleButton
+            x:Name="ToggleShowWelcomePage"
+            Click="SettingToggle_Click"
             Style="{StaticResource ToggleStyle}"
             Margin="10"
             Grid.Column="0"/>

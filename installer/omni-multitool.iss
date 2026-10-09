@@ -26,6 +26,8 @@ SolidCompression=yes
 WizardStyle=modern
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
+CloseApplications=yes
+CloseApplicationsFilter={#ExeName}
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -42,5 +44,26 @@ Name: "{autoprograms}\{#AppName}"; Filename: "{app}\{#ExeName}"
 Name: "{autodesktop}\{#AppName}"; Filename: "{app}\{#ExeName}"; Tasks: desktopicon
 Name: "{userstartup}\{#AppName}"; Filename: "{app}\{#ExeName}"; Tasks: startupicon
 
+[Registry]
+Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueName: "omni-multitool"; Flags: uninsdeletevalue
+
+[UninstallDelete]
+Type: filesandordirs; Name: "{localappdata}\OMNI Utility Suite"
+
 [Run]
 Filename: "{app}\{#ExeName}"; Description: "{cm:LaunchProgram,{#StringChange(AppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+
+[Code]
+procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
+var
+  ResultCode: Integer;
+begin
+  if CurUninstallStep = usUninstall then
+  begin
+    Exec('taskkill.exe', '/f /im omni-multitool.exe', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
+  end;
+  if CurUninstallStep = usPostUninstall then
+  begin
+    DelTree(ExpandConstant('{localappdata}\OMNI Utility Suite'), True, True, True);
+  end;
+end;

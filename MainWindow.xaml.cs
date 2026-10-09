@@ -1,4 +1,4 @@
-﻿using omni_multitool.Helpers;
+using omni_multitool.Helpers;
 using omni_multitool.Pages;
 using System.Text;
 using System.Windows;
@@ -31,8 +31,24 @@ namespace omni_multitool
             Application.Current.Shutdown();
         }
 
-        private void CloseConfirm_Click(object sender, RoutedEventArgs e)
+        private async void CloseConfirm_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var settingsService = new omni_multitool.Data.SettingsService();
+                var settings = await settingsService.GetAppSettingsAsync();
+
+                if (settings.MinimizeToTray)
+                {
+                    this.Hide();
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error checking MinimizeToTray: {ex.Message}");
+            }
+
             var closeConfirmWindow = new CloseConfirmWindow
             {
                 Owner = this
