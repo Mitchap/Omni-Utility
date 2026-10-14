@@ -6,6 +6,7 @@
 
 A lightweight collection of desktop utilities built with **WPF and .NET**.
 
+<a href="https://drive.google.com/file/d/1xmn1bX47P8FuQ0F79jORViqC-YI41WU2/view?usp=sharing">Download</a>
 ## Goal
 
 OMNI is a personal desktop Utility Suite designed to bring commonly used utilities into a single, simple application.
@@ -96,16 +97,23 @@ dist/
 
 ## Screenshots
 
-### Main Window
+### Welcome Page
 
-<!-- Add screenshot here -->
+<p align="center">
+  <img src="Docs/home.png" alt="OMNI Utility Suite Welcome Page" width="800" />
+</p>
+
 
 ### Color Picker
 
-<!-- Add screenshot here -->
+<p align="center">
+  <img src="Docs/color_picker.png" alt="OMNI Color Picker page" width="800" />
+</p>
 
-### Water Reminder
-
+### Water Reminder Notif
+<p align="center">
+  <img src="Docs/water_reminder.png" alt="OMNI Water Reminder Notification" width="800" />
+</p>
 <!-- Add screenshot here -->
 
 ---
@@ -117,6 +125,23 @@ Current version:
 **v0.1.1**
 
 OMNI is currently under active development. Features and UI may change between releases.
+
+---
+## Pending Tasks
+
+### To Fix
+
+* [ ] Make the Welcome Page's "Don't show this again" checkbox work.
+
+### To Do
+
+* [ ] Implement Favorites functionality.
+* [ ] Add Image Converter.
+* [ ] Add Unit Converter.
+* [ ] Test application settings and Water Reminder persistence.
+* [ ] Test system tray, background reminders, and single-instance behavior.
+* [ ] Verify installer, updates, and uninstallation.
+* [ ] Finalize testing and release packaging.
 
 ---
 
