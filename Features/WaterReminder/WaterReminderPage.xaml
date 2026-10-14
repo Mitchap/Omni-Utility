@@ -352,5 +352,11 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
+        <!-- Toast container for auto-save notifications -->
+        <StackPanel x:Name="ToastContainer"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,30,30"
+                    Panel.ZIndex="99"/>
     </Grid>
 </Page>

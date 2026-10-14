@@ -114,7 +114,7 @@ dist/
 
 Current version:
 
-**v0.1.0**
+**v0.1.1**
 
 OMNI is currently under active development. Features and UI may change between releases.
 

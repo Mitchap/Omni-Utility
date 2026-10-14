@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System;
+using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using omni_multitool.Data;
+using omni_multitool.Data.Models;
 
 namespace omni_multitool.Pages
 {
@@ -18,10 +13,65 @@ namespace omni_multitool.Pages
     /// </summary>
     public partial class WelcomePage : Window
     {
+        private AppSettings? _appSettings;
+        private bool _isLoading = true;
+
         public WelcomePage()
         {
             InitializeComponent();
+            Loaded += WelcomePage_Loaded;
         }
+
+        private async void WelcomePage_Loaded(object sender, RoutedEventArgs e)
+        {
+            await LoadSettingsAsync();
+        }
+
+        private async Task LoadSettingsAsync()
+        {
+            _isLoading = true;
+            try
+            {
+                var settingsService = new SettingsService();
+                _appSettings = await settingsService.GetAppSettingsAsync();
+                ChkDontShowAgain.IsChecked = !_appSettings.ShowWelcomePage;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error loading settings in WelcomePage: {ex.Message}");
+            }
+            finally
+            {
+                _isLoading = false;
+            }
+        }
+
+        private async void ChkDontShowAgain_Click(object sender, RoutedEventArgs e)
+        {
+            await SaveSettingsAsync();
+        }
+
+        private async Task SaveSettingsAsync()
+        {
+            if (_isLoading) return;
+
+            try
+            {
+                var settingsService = new SettingsService();
+                if (_appSettings == null)
+                {
+                    _appSettings = await settingsService.GetAppSettingsAsync();
+                }
+
+                _appSettings.ShowWelcomePage = !(ChkDontShowAgain.IsChecked ?? false);
+                await settingsService.SaveAppSettingsAsync(_appSettings);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error saving settings in WelcomePage: {ex.Message}");
+            }
+        }
+
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -31,6 +81,7 @@ namespace omni_multitool.Pages
         {
             this.WindowState = WindowState.Minimized;
         }
+
         private void ContinueGlow_Loaded(object sender, RoutedEventArgs e)
         {
             var startAnimation = new PointAnimation
@@ -58,8 +109,10 @@ namespace omni_multitool.Pages
                 endAnimation);
         }
 
-        private void BtnContinue_Click(object sender, RoutedEventArgs e)
+        private async void BtnContinue_Click(object sender, RoutedEventArgs e)
         {
+            await SaveSettingsAsync();
+
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
 

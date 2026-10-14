@@ -65,6 +65,9 @@ namespace omni_multitool.Pages
 
                 // Apply StartWithWindows behavior
                 AutoStartHelper.SetAutoStart(_appSettings.StartWithWindows);
+
+                // Show toast notification
+                ToastService.ShowToast(ToastContainer);
             }
             catch (Exception ex)
             {

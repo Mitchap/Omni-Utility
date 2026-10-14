@@ -6,6 +6,7 @@ using System.Windows.Media;
 using System.Runtime.Versioning;
 using omni_multitool.Data;
 using omni_multitool.Data.Models;
+using omni_multitool.Helpers;
 
 namespace omni_multitool.Features.WaterReminder
 {
@@ -64,6 +65,7 @@ namespace omni_multitool.Features.WaterReminder
             try
             {
                 await WaterReminderService.Instance.UpdateSettingsAsync(_settings);
+                ToastService.ShowToast(ToastContainer);
             }
             catch (Exception ex)
             {

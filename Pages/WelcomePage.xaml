@@ -1,4 +1,4 @@
-﻿<Window x:Class="omni_multitool.Pages.WelcomePage"
+<Window x:Class="omni_multitool.Pages.WelcomePage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -17,7 +17,6 @@
         ResizeMode="NoResize"
         AllowsTransparency="True"
         Background="Transparent"
-        helpers:DraggableWindow.IsDraggable="True"
         WindowStartupLocation="CenterScreen">
     <Border
             CornerRadius="20">
@@ -29,45 +28,48 @@
         AlignmentY="Center"
         Opacity="1"/>
         </Border.Background>
-        <Grid x:Name="TitleBar">
+        <Grid>
 
 
 
 
-            <Grid Margin="0,20,0,0">
+
+            <Grid Margin="0,0,0,0"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Top"
+      Height="60"
+      x:Name="TitleBar"
+      Background="Transparent"
+      helpers:DraggableWindow.IsDraggable="True">
+
                 <!-- Window controls -->
                 <StackPanel Orientation="Horizontal"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Top"
-                    Margin="0,0,20,0">
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="0,20,20,0">
 
                     <Button Click="MinimizeButton_Click"
-                    Style="{StaticResource WindowControlButtonStyle}"
-                    Margin="0,0,15,0">
+                Style="{StaticResource WindowControlButtonStyle}"
+                Margin="0,0,15,0">
 
                         <TextBlock
-                    FontFamily="{StaticResource MaterialSymbolsOutlined}"
-                    Text="&#xE15B;"
-                    FontSize="18"
-                   
-                    />
-
+                FontFamily="{StaticResource MaterialSymbolsOutlined}"
+                Text="&#xE15B;"
+                FontSize="18"/>
                     </Button>
 
                     <Button Click="ExitButton_Click"
-                    Style="{StaticResource WindowControlButtonStyle}">
+                Style="{StaticResource WindowControlButtonStyle}">
 
                         <TextBlock
-                     FontFamily="{StaticResource MaterialSymbolsOutlined}"
-                     Text="&#xE5CD;"
-                     FontSize="18"
-                     Margin="0,0,0,0"/>
-
+                FontFamily="{StaticResource MaterialSymbolsOutlined}"
+                Text="&#xE5CD;"
+                FontSize="18"/>
                     </Button>
 
                 </StackPanel>
-
             </Grid>
+
 
 
 
@@ -116,8 +118,8 @@
 
                 <!-- Utility Suite -->
                 <TextBlock Text="UTILITY SUITE"
-               FontSize="20"
-               Foreground="#C8C8C8"
+               FontSize="16"
+               Foreground="#e3e3e3"
                HorizontalAlignment="Left"
                Margin="10,-10,0,0"/>
 
@@ -195,14 +197,14 @@
 
 
             <!-- Don't show again -->
-            <CheckBox Content="Don't show this again"
+            <CheckBox x:Name="ChkDontShowAgain" Click="ChkDontShowAgain_Click" Content="Don't show this again"
               HorizontalAlignment="Left"
               VerticalAlignment="Bottom"
               Margin="120,0,0,65"
               Foreground="#C8C8C8"
               Cursor="Hand"/>
 
-            <TextBlock Text="v0.1.0"
+            <TextBlock Text="v0.1.1"
            FontFamily="{StaticResource Jost}"
            FontSize="11"
            Foreground="#80FEFEFE"
