@@ -6,7 +6,7 @@
 
 A lightweight collection of desktop utilities built with **WPF and .NET**.
 
-<a href="https://drive.google.com/file/d/1xmn1bX47P8FuQ0F79jORViqC-YI41WU2/view?usp=sharing">Download</a>
+<a href="https://drive.google.com/drive/folders/1qjPDhi9vuK-WZjowhsS49uNGpQ5Y0OEJ">Download</a>
 ## Goal
 
 OMNI is a personal desktop Utility Suite designed to bring commonly used utilities into a single, simple application.
